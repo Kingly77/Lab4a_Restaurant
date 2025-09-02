@@ -12,9 +12,12 @@ struct Restaurants {
 };
 
 void get_restaurant_name_input(Restaurants &restaurants) {
+    // get_restaurant_name_input() gets input and maybe validates it
+    // arguments: Restaurants&
+    // returns: void
+
     std::cout << "Enter the name of the restaurant: ";
     try {
-
         std::getline(std::cin, restaurants.name);
         if (std::cin.fail()) throw std::exception();
     }catch (std::exception &e) {
@@ -26,6 +29,10 @@ void get_restaurant_name_input(Restaurants &restaurants) {
 
 
 void collect_restaurant_age_input(Restaurants &restaurants) {
+    // collect_restaurant_age_input() gets input and maybe validates it
+    // arguments: Restaurants&
+    // returns: void
+
     std::cout << "Enter the age of the restaurant: ";
     try {
         std::cin >> restaurants.age;
@@ -38,6 +45,9 @@ void collect_restaurant_age_input(Restaurants &restaurants) {
 }
 
 void get_restaurant_rating(Restaurants &restaurants) {
+    // get_restaurant_rating() gets input and maybe validates it
+    // arguments: Restaurants&
+    // returns: void
     std::cout << "Enter the rating of the restaurant: ";
     try {
         std::cin.ignore();
@@ -50,6 +60,9 @@ void get_restaurant_rating(Restaurants &restaurants) {
 }
 
 void get_restaurant_type_input(Restaurants &restaurants) {
+    // get_restaurant_type_input() gets input and maybe validates it
+    // arguments: Restaurants&
+    // returns: void
     std::cout << "Enter the type of the restaurant: ";
     try {
         std::getline(std::cin,restaurants.type);
@@ -62,6 +75,9 @@ void get_restaurant_type_input(Restaurants &restaurants) {
 }
 
 void get_restaurant_item_count(Restaurants &restaurants) {
+    // get_restaurant_item_count() gets input and maybe validates it
+    // arguments: Restaurants&
+    // returns: void
     std::cout << "Enter the number of items in the restaurant: ";
     try {
         std::cin >> restaurants.number_of_items;
@@ -75,6 +91,9 @@ void get_restaurant_item_count(Restaurants &restaurants) {
 
 [[nodiscard]]
 Restaurants makeRestaurants() {
+    // makeRestaurants() Makes an restaurant Struct
+    // arguments: void
+    // returns: Restaurant
     Restaurants restaurants;
 
     get_restaurant_name_input(restaurants);
@@ -86,6 +105,9 @@ Restaurants makeRestaurants() {
 }
 
 void displayRestaurant(const Restaurants &restaurant) {
+    // displayRestaurant() outputs data
+    // arguments: void
+    // returns: void
     std::cout << "Name: " << restaurant.name << std::endl;
     std::cout << "Age: " << restaurant.age << std::endl;
     std::cout << "Rating: " << restaurant.rating << std::endl;
